@@ -1,0 +1,47 @@
+<h1>{{title}}</h1>
+<h3>Weather row</h3>
+<hr />
+<form [formGroup]="weatherForm" (ngSubmit)="save()" #formDir="ngForm" novalidate>
+  <mat-form-field>
+    <mat-label>Date</mat-label>
+    <input matInput formControlName="date" [matDatepicker]="picker">
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+    <span class="text-danger" *ngIf="weatherForm.hasError('required', 'date') && formDir.submitted">
+      Date is required.
+    </span>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>City</mat-label>
+    <mat-select formControlName="cityId">
+      <mat-option *ngFor="let city of cities" [value]="city.id">
+        {{city.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Temperature</mat-label>
+    <input type="text" matInput formControlName="temperature">
+    <span class="text-danger" *ngIf="weatherForm.hasError('required', 'temperature') && formDir.submitted">
+      Temperature is required
+    </span>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Rain</mat-label>
+    <input type="text" matInput formControlName="rain">
+    <span class="text-danger" *ngIf="weatherForm.hasError('required', 'rain') && formDir.submitted">
+      Rain field is required
+    </span>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Wind</mat-label>
+    <input type="text" matInput formControlName="wind">
+    <span class="text-danger" *ngIf="weatherForm.hasError('required', 'wind') && formDir.submitted">
+      Wind field is required
+    </span>
+  </mat-form-field>
+  <div>
+    <button mat-raised-button color="primary" type="submit">Save</button>
+    <button mat-raised-button color="red" (click)="cancel()">Cancel</button>
+  </div>
+</form>

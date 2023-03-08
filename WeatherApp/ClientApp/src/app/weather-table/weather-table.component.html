@@ -1,0 +1,66 @@
+<div class="mat-elevation-z8">
+  <table mat-table class="" matSort [dataSource]="dataSource">
+    <!-- Date Column -->
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Date</th>
+      <td mat-cell *matCellDef="let row">{{row.date | date:'dd.MM.yyyy':'GMT+4'}}</td>
+    </ng-container>
+
+    <!-- Temperature Column -->
+    <ng-container matColumnDef="temperature">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Temperature (C)</th>
+      <td mat-cell *matCellDef="let row">{{row.temperature}}</td>
+    </ng-container>
+
+    <!-- Rain Column -->
+    <ng-container matColumnDef="rain">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Rain (mm)</th>
+      <td mat-cell *matCellDef="let row">{{row.rain}}</td>
+    </ng-container>
+
+    <!-- Wind Column -->
+    <ng-container matColumnDef="wind">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Wind (m/s)</th>
+      <td mat-cell *matCellDef="let row">{{row.wind}}</td>
+    </ng-container>
+
+    <!-- City Column -->
+    <ng-container matColumnDef="city">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>City</th>
+      <td mat-cell *matCellDef="let row">{{row.city.name}}</td>
+    </ng-container>
+
+    <!-- Edit and delete buttons -->
+    <ng-container matColumnDef="edit">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let row">
+        <button mat-button color="primary" (click)="editRow(row.id)">
+          Edit
+        </button>|
+        <button mat-button color="warn" (click)="deleteRow(row.id)">
+          Delete
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <mat-paginator #paginator
+                 [length]="dataLength"
+                 [pageIndex]="0"
+                 [pageSize]="10"
+                 [pageSizeOptions]="[5, 10, 20]"
+                 aria-label="Select page">
+  </mat-paginator>
+  
+</div>
+<div class="create-button">
+  <button mat-raised-button color="primary" (click)="createRow()">
+    Create New
+  </button>
+</div>
+  
+
+
+

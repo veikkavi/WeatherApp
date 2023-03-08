@@ -1,0 +1,36 @@
+
+<h3>Choose date range and city</h3>
+<div class="filter-form" [formGroup]="filterForm">
+  <mat-form-field class="form-field">
+    <mat-label>Date Range</mat-label>
+    <mat-date-range-input [rangePicker]="picker">
+      <input matStartDate formControlName="start" placeholder="Start Date">
+      <input matEndDate formControlName="end" placeholder="End Date">
+    </mat-date-range-input>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-date-range-picker #picker></mat-date-range-picker>
+  </mat-form-field>
+  <mat-form-field class="form-field">
+    <mat-label>City</mat-label>
+    <input type="text" matInput formControlName="city" [matAutocomplete]="auto">
+    <button mat-icon-button matSuffix aria-label="search">
+      <mat-icon>search</mat-icon>
+    </button>
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+      <mat-option *ngFor="let city of filteredCities | async" [value]="city">
+        {{city.name}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+  <button mat-raised-button [ngStyle]="{'background-color': modified? 'green' : 'white'}" (click)="submitFilter()" class="form-field">
+    Search
+  </button>
+</div>
+
+
+<h3>Seed data for current range. This will overwrite any existing data for selected dates and city.</h3>
+<button class="form-field" mat-raised-button color="primary" (click)="seedData()">
+  Seed Data
+</button>
+
+

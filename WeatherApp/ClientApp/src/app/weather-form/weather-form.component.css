@@ -1,0 +1,9 @@
+form {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+mat-form-field{
+    padding: 0px 10px 0px 10px;
+}

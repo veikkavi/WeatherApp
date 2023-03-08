@@ -1,0 +1,21 @@
+<mat-toolbar>
+  <span>Weather Application</span>
+</mat-toolbar>
+
+<app-weather-filter></app-weather-filter>
+
+<nav mat-tab-nav-bar mat-stretch-tabs [tabPanel]="tabPanel">
+  <a mat-tab-link [active]="activeLink == 'weather'" (click)="activeLink = 'weather'" [routerLink]="['/weather']">Weather data</a>
+  <a mat-tab-link [active]="activeLink == 'report'" (click)="activeLink = 'report'" [routerLink]="['/report']">Reports</a>
+</nav>
+
+<mat-tab-nav-panel #tabPanel> 
+  <mat-drawer-container [hasBackdrop]="false">
+    <mat-drawer [disableClose]="true" #drawer mode="side" position="end" [opened]="drawerOpened">
+        <app-weather-form></app-weather-form>
+    </mat-drawer>
+    <div class="container">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-container> 
+</mat-tab-nav-panel>

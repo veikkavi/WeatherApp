@@ -1,0 +1,14 @@
+.filter-form {
+  display: flex;
+  align-items: flex-start;
+}
+
+
+
+.form-field {
+  margin: 12px 12px;
+}
+
+h3 {
+  margin: 12px 12px;
+}

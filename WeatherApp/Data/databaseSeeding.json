@@ -1,0 +1,85 @@
+﻿{
+  "defaultCities": [
+    { "name": "Oulu" },
+    { "name": "Helsinki" },
+    { "name": "Jyväskylä" },
+    { "name": "Tampere" },
+    { "name": "Kuopio" },
+    { "name": "Espoo" },
+    { "name": "Rovaniemi" }
+  ],
+  "weatherRanges": [
+    {
+      "month": 1,
+      "temperatureRange":  { "start": -30, "end": 0 },
+      "windRange": { "start": 0, "end": 10 },
+      "rainRange": { "start": 0, "end": 10}
+    },
+    { 
+      "month": 2,
+      "temperatureRange":  { "start": -25, "end": 5 },
+      "windRange": { "start": 0, "end": 10 },
+      "rainRange": { "start": 0, "end": 15}
+    },
+    { 
+      "month": 3,
+      "temperatureRange":  { "start": -20, "end": 5 },
+      "windRange": { "start": 0, "end": 10 },
+      "rainRange": { "start": 0, "end": 15 }
+    },
+    { 
+      "month": 4,
+      "temperatureRange":  { "start": -10, "end": 15 },
+      "windRange": { "start": 0, "end": 10 },
+      "rainRange": { "start": 0, "end": 15 }
+    },
+    { 
+      "month": 5,
+      "temperatureRange":  { "start": 0, "end": 25 },
+      "windRange": { "start": 0, "end": 10 },
+      "rainRange": { "start": 0, "end": 15 }
+    },
+    { 
+      "month": 6,
+      "temperatureRange":  { "start": 5, "end": 30 },
+      "windRange": { "start": 0, "end": 10 },
+      "rainRange": { "start": 0, "end": 15 }
+    },
+    { 
+      "month": 7,
+      "temperatureRange":  { "start": 10, "end": 30 },
+      "windRange": { "start": 0, "end": 10 },
+      "rainRange": { "start": 0, "end": 15 }
+    },
+    { 
+      "month": 8,
+      "temperatureRange":  { "start": 10, "end": 30 },
+      "windRange": { "start": 0, "end": 10 },
+      "rainRange": { "start": 0, "end": 15 }
+    },
+    { 
+      "month": 9,
+      "temperatureRange":  { "start": 0, "end": 15 },
+      "windRange": { "start": 0, "end": 10 },
+      "rainRange": { "start": 0, "end": 15 }
+    },
+    { 
+      "month": 10,
+      "temperatureRange":  { "start": -10, "end": 10 },
+      "windRange": { "start": 0, "end": 10 },
+      "rainRange": { "start": 0, "end": 15 }
+    },
+    { 
+      "month": 11,
+      "temperatureRange":  { "start": -20, "end": 5 },
+      "windRange": { "start": 0, "end": 10 },
+      "rainRange": { "start": 0, "end": 15 }
+    },
+    { 
+      "month": 12,
+      "temperatureRange":  { "start": -25, "end": 5 },
+      "windRange": { "start": 0, "end": 10 },
+      "rainRange": { "start": 0, "end": 15 }
+    }
+  ]
+}

@@ -13,9 +13,6 @@
   <mat-form-field class="form-field">
     <mat-label>City</mat-label>
     <input type="text" matInput formControlName="city" [matAutocomplete]="auto">
-    <button mat-icon-button matSuffix aria-label="search">
-      <mat-icon>search</mat-icon>
-    </button>
     <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
       <mat-option *ngFor="let city of filteredCities | async" [value]="city">
         {{city.name}}
